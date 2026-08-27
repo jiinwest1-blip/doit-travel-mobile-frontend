@@ -1,9 +1,10 @@
 /**
  * Design reminder — Light Aviation Lounge: 상단 헤더 없이 콘텐츠가 안전 영역부터 시작하며,
- * 밝은 정보 카드와 여행 맥락을 유지하고 하단 내비게이션으로 전역 이동을 제공한다.
+ * 앱 프레임 위의 얇은 오버레이 스크롤 인디케이터로 폭 손실 없이 여행 흐름을 보여 준다.
  */
 import { Link, useLocation } from "wouter";
 import { CalendarDays, Compass, Home, Plus, UserRound } from "lucide-react";
+import { useEffect, useRef, useState } from "react";
 
 const navigation = [
   { href: "/", label: "홈", icon: Home },
@@ -21,17 +22,62 @@ type AppShellProps = {
 
 export function AppShell({ eyebrow, title, children }: AppShellProps) {
   const [location] = useLocation();
+  const scrollableRef = useRef<HTMLDivElement>(null);
+  const [scrollIndicator, setScrollIndicator] = useState({ visible: false, size: 100, position: 0 });
+
+  const updateScrollIndicator = () => {
+    const container = scrollableRef.current;
+    if (!container) return;
+
+    const overflow = container.scrollHeight - container.clientHeight;
+    if (overflow <= 1) {
+      setScrollIndicator({ visible: false, size: 100, position: 0 });
+      return;
+    }
+
+    const size = Math.max(14, (container.clientHeight / container.scrollHeight) * 100);
+    const position = (container.scrollTop / overflow) * (100 - size);
+    setScrollIndicator({ visible: true, size, position });
+  };
+
+  useEffect(() => {
+    const container = scrollableRef.current;
+    if (!container) return;
+
+    const animationFrame = window.requestAnimationFrame(updateScrollIndicator);
+    const observer = new ResizeObserver(updateScrollIndicator);
+    observer.observe(container);
+    window.addEventListener("resize", updateScrollIndicator);
+
+    return () => {
+      window.cancelAnimationFrame(animationFrame);
+      observer.disconnect();
+      window.removeEventListener("resize", updateScrollIndicator);
+    };
+  }, [location]);
 
   return (
     <div className="app-stage">
       <div className="app-frame">
-        <main className="app-content">
-          <div className="page-intro">
-            <p>{eyebrow}</p>
-            {title ? <h1>{title}</h1> : null}
-          </div>
-          {children}
-        </main>
+        <div className="app-scrollable" ref={scrollableRef} onScroll={updateScrollIndicator}>
+          <main className="app-content">
+            <div className="page-intro">
+              <p>{eyebrow}</p>
+              {title ? <h1>{title}</h1> : null}
+            </div>
+            {children}
+          </main>
+        </div>
+
+        <div
+          className={`overlay-scroll-track ${scrollIndicator.visible ? "is-visible" : ""}`}
+          aria-hidden="true"
+        >
+          <span
+            className="overlay-scroll-thumb"
+            style={{ height: `${scrollIndicator.size}%`, top: `${scrollIndicator.position}%` }}
+          />
+        </div>
 
         <nav className="bottom-dock" aria-label="주요 메뉴">
           {navigation.map((item) => {
