@@ -1,6 +1,6 @@
 /**
- * Design reminder — 항공 라운지 글래스: Midnight Navy 위의 정보성 유리 레이어,
- * 한 손 조작이 쉬운 하단 도킹 내비게이션, Aurora Blue를 행동 신호로 사용한다.
+ * Design reminder — 또잇의 Toss-style adaptation: 밝은 중성 바탕과 명료한 정보 카드를 쓰되,
+ * 또잇의 궤도 심볼과 여행 맥락을 유지하고 하단 내비게이션은 한 손 사용성을 우선한다.
  */
 import { Link, useLocation } from "wouter";
 import { CalendarDays, Compass, Home, Plus, UserRound } from "lucide-react";
@@ -34,7 +34,7 @@ export function AppShell({ eyebrow, title, children }: AppShellProps) {
           </Link>
           <div className="header-status" aria-label="여행 플래너 서비스 상태">
             <span className="status-pulse" />
-            <span>준비 중인 여행</span>
+            <span>도쿄 여행</span>
           </div>
         </header>
 
@@ -67,4 +67,3 @@ export function AppShell({ eyebrow, title, children }: AppShellProps) {
     </div>
   );
 }
-

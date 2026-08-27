@@ -1,6 +1,6 @@
 /**
- * Design reminder — 항공 라운지 글래스: 목적지 이미지는 낮은 조도의 표지 역할을 하고,
- * 여행의 다음 행동은 Aurora Blue의 명료한 CTA로 안내한다.
+ * Design reminder — Light Aviation Lounge: 명료한 흰색 정보 카드 위에 공항 코드·여정선·파란 칩을
+ * 정보 요소로 더하고, 목적지명은 세리프 표지처럼 절제해 또잇의 여행 OS를 만든다.
  */
 import { Link } from "wouter";
 import { ArrowRight, CalendarRange, ChevronRight, Clock3, Compass, Plane, Sparkles } from "lucide-react";
@@ -13,29 +13,29 @@ const neighborhoodImage = "/manus-storage/doit-tokyo-neighborhood_9ea29236.jpg";
 
 export default function Home() {
   return (
-    <AppShell eyebrow="GOOD EVENING, JIIN" title="다음 여행을,
-더 나답게.">
+    <AppShell eyebrow="오늘의 여행 준비" title="다음 여행을
+더 정확하게 이어가요">
       <section className="hero-card" style={{ backgroundImage: `url(${heroImage})` }}>
         <div className="hero-shade" />
         <div className="horizon-halo" />
         <div className="hero-content">
-          <div className="hero-eyebrow"><span className="live-dot" /> 계획을 다듬는 중</div>
+          <div className="hero-eyebrow"><span className="live-dot" /> AI가 제안한 여행</div>
           <div>
-            <p className="hero-destination">TOKYO</p>
-            <h2>도쿄의 하루가,<br /><em>이동보다 기억으로</em><br />채워지도록.</h2>
+            <p className="hero-destination"><em>Tokyo</em><span>ICN → NRT · 4박 5일</span></p>
+            <h2>도쿄의 하루가,<br /><em>이동보다 기억으로</em><br />채워지도록 해요.</h2>
           </div>
           <div className="hero-meta">
             <span><CalendarRange size={15} /> 12.11 — 12.15</span>
             <span><Compass size={15} /> 2명 · 균형 있게</span>
           </div>
-          <Link href="/plan" className="hero-action">이 동선 이어서 보기 <ArrowRight size={17} /></Link>
+          <Link href="/plan" className="hero-action">AI 일정 이어서 보기 <ArrowRight size={17} /></Link>
         </div>
       </section>
 
       <section className="section-block journey-summary">
         <div className="section-heading">
           <div>
-            <span className="section-kicker">IN PROGRESS</span>
+            <span className="section-kicker">진행 중인 여행</span>
             <h2>도쿄, 4박 5일</h2>
           </div>
           <span className="quiet-count">72% 완성</span>
@@ -50,7 +50,7 @@ export default function Home() {
 
       <section className="section-block">
         <div className="section-heading compact">
-          <div><span className="section-kicker">TODAY'S ROUTE</span><h2>첫째 날의 리듬</h2></div>
+          <div><span className="section-kicker">오늘의 동선</span><h2>첫째 날의 리듬</h2></div>
           <Link href="/plan" className="text-link">전체 보기 <ChevronRight size={15} /></Link>
         </div>
         <div className="route-preview">
@@ -67,7 +67,7 @@ export default function Home() {
 
       <section className="section-block fare-block">
         <div className="section-heading compact">
-          <div><span className="section-kicker">FLIGHT WATCH</span><h2>가격이 괜찮을 때</h2></div>
+          <div><span className="section-kicker">항공권 비교</span><h2>가격이 괜찮을 때</h2></div>
           <button className="icon-text-button" onClick={() => toast("항공권 비교는 곧 연결됩니다.")}><Plane size={15} /> 전체 비교</button>
         </div>
         <div className="fare-stack">
@@ -85,7 +85,7 @@ export default function Home() {
       <section className="memory-teaser" style={{ backgroundImage: `url(${neighborhoodImage})` }}>
         <div className="memory-shade" />
         <div>
-          <span className="section-kicker">YOUR ARCHIVE</span>
+          <span className="section-kicker">지난 여행 기록</span>
           <h2>여행 뒤에도<br />또잇은 남아요.</h2>
           <p>다녀온 장소를 3가지 감정으로 기록해 보세요.</p>
         </div>
@@ -94,4 +94,3 @@ export default function Home() {
     </AppShell>
   );
 }
-
