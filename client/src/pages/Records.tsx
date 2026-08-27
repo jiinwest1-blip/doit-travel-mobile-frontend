@@ -17,7 +17,7 @@ export default function Records() {
       <section className="archive-hero" style={{ backgroundImage: `url(${memoryImage})` }}>
         <div className="archive-shade" />
         <div className="archive-count"><img src={brandMark} alt="" /> <Camera size={16} /> 12개의 장면</div>
-        <div className="archive-title"><span className="record-date-chip">2026. 06. 17 — 06. 22</span><h2>Amalfi, five slow days.</h2><p>파도 소리와 긴 저녁이 남은 여행</p></div>
+        <div className="archive-title"><span className="record-date-chip">2026. 06. 17 — 06. 22</span><span className="archive-route-stamp">NAP → AMALFI</span><h2>Amalfi, five slow days.</h2><p>파도 소리와 긴 저녁이 남은 여행</p></div>
       </section>
 
       <section className="record-stats glass-panel">

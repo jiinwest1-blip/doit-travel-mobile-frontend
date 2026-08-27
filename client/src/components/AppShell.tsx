@@ -9,7 +9,7 @@ import { useEffect, useRef, useState } from "react";
 const navigation = [
   { href: "/", label: "홈", icon: Home },
   { href: "/explore", label: "탐색", icon: Compass },
-  { href: "/plan", label: "계획하기", icon: Sparkles, primary: true },
+  { href: "/create", label: "계획하기", icon: Sparkles, primary: true },
   { href: "/records", label: "기록", icon: CalendarDays },
   { href: "/profile", label: "마이", icon: UserRound },
 ];

@@ -4,7 +4,7 @@
  */
 import { useState } from "react";
 import { Link } from "wouter";
-import { ArrowLeft, ChevronDown, CircleDollarSign, MapPinned, MoreHorizontal, Plus, RotateCcw, Sparkles } from "lucide-react";
+import { ArrowLeft, ChevronDown, CircleDollarSign, MapPinned, MoreHorizontal, Plus, RotateCcw, Share2, Sparkles } from "lucide-react";
 import { toast } from "sonner";
 import { AppShell } from "@/components/AppShell";
 import { TripMap } from "@/components/TripMap";
@@ -15,6 +15,20 @@ const brandMark = "/manus-storage/doit-orbit-logo_a4c09b0a.png";
 export default function Plan() {
   const [activeDay, setActiveDay] = useState(1);
   const [saved, setSaved] = useState(false);
+  const shareDraft = async () => {
+    const shareData = { title: "또잇 · 도쿄 여행 초안", text: "또잇이 만든 도쿄 4박 5일 여행 초안을 확인해 보세요.", url: window.location.href };
+    if (navigator.share) {
+      try {
+        await navigator.share(shareData);
+        toast("읽기 전용 일정 링크를 공유했어요.");
+      } catch {
+        // 사용자가 공유 시트를 닫은 경우에는 별도 안내가 필요하지 않습니다.
+      }
+      return;
+    }
+    await navigator.clipboard?.writeText(window.location.href);
+    toast("읽기 전용 일정 링크를 복사했어요.");
+  };
   return (
     <AppShell eyebrow="AI 여행 초안" title="도쿄 일정,
 한눈에 확인해요">
@@ -51,8 +65,9 @@ export default function Plan() {
       </section>
 
       <section className="plan-actions">
-        <button className="secondary-plan-action" onClick={() => toast("현재 동선으로 다시 계산했습니다.")}><RotateCcw size={17} /> 동선 다시 계산</button>
-        <button className="primary-plan-action" onClick={() => { setSaved(true); toast("도쿄 여행 초안을 저장했어요."); }}>{saved ? "저장 완료" : "이 일정 저장"}<Plus size={18} /></button>
+        <button className="secondary-plan-action" onClick={() => toast("현재 동선으로 다시 계산했습니다.")}><RotateCcw size={17} /> 재계산</button>
+        <button className="share-plan-action" onClick={shareDraft}><Share2 size={17} /> 공유</button>
+        <button className="primary-plan-action" onClick={() => { setSaved(true); toast("도쿄 여행 초안을 저장했어요."); }}>{saved ? "저장 완료" : "저장"}<Plus size={18} /></button>
       </section>
     </AppShell>
   );
