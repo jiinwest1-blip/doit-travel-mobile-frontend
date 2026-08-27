@@ -10,7 +10,7 @@ import { flights, itinerary } from "@/const";
 
 const heroImage = "/manus-storage/doit-hero-tokyo-bluehour_97254225.jpg";
 const neighborhoodImage = "/manus-storage/doit-tokyo-neighborhood_9ea29236.jpg";
-const brandMark = "/manus-storage/doit-orbit-logo_a4c09b0a.png";
+const brandMark = "/manus-storage/doit-logo-glass-tile_dbe80741.png";
 
 export default function Home() {
   return (

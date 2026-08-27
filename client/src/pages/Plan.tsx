@@ -10,7 +10,7 @@ import { AppShell } from "@/components/AppShell";
 import { TripMap } from "@/components/TripMap";
 import { itinerary } from "@/const";
 
-const brandMark = "/manus-storage/doit-orbit-logo_a4c09b0a.png";
+const brandMark = "/manus-storage/doit-logo-glass-tile_dbe80741.png";
 
 export default function Plan() {
   const [activeDay, setActiveDay] = useState(1);

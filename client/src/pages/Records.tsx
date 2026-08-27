@@ -8,7 +8,7 @@ import { toast } from "sonner";
 import { AppShell } from "@/components/AppShell";
 
 const memoryImage = "/manus-storage/doit-amalfi-memory_6c1ae626.jpg";
-const brandMark = "/manus-storage/doit-orbit-logo_a4c09b0a.png";
+const brandMark = "/manus-storage/doit-logo-glass-tile_dbe80741.png";
 
 export default function Records() {
   return (

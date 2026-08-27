@@ -6,7 +6,7 @@ import { ArrowUpRight, CalendarDays, MapPin, Search, Sparkles } from "lucide-rea
 import { toast } from "sonner";
 import { AppShell } from "@/components/AppShell";
 
-const brandMark = "/manus-storage/doit-orbit-logo_a4c09b0a.png";
+const brandMark = "/manus-storage/doit-logo-glass-tile_dbe80741.png";
 
 export default function Explore() {
   return (
