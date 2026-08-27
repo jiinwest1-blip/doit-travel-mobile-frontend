@@ -1,15 +1,15 @@
 /**
  * Design reminder — Light Aviation Lounge: 상단 헤더 없이 콘텐츠가 안전 영역부터 시작하며,
- * 앱 프레임 위의 얇은 오버레이 스크롤 인디케이터로 폭 손실 없이 여행 흐름을 보여 준다.
+ * 앱 프레임 위의 얇은 오버레이 스크롤 인디케이터와 부유형 계획 액션으로 폭 손실 없이 여행 흐름을 보여 준다.
  */
 import { Link, useLocation } from "wouter";
-import { CalendarDays, Compass, Home, Plus, UserRound } from "lucide-react";
+import { CalendarDays, Compass, Home, Sparkles, UserRound } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 
 const navigation = [
   { href: "/", label: "홈", icon: Home },
   { href: "/explore", label: "탐색", icon: Compass },
-  { href: "/plan", label: "계획", icon: Plus, primary: true },
+  { href: "/plan", label: "계획하기", icon: Sparkles, primary: true },
   { href: "/records", label: "기록", icon: CalendarDays },
   { href: "/profile", label: "마이", icon: UserRound },
 ];
