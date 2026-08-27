@@ -103,6 +103,10 @@ Personality: **정교한, 다정한, 실행력 있는**
 
 밝은 정보 카드 구조를 유지하면서도, 모든 주요 화면에는 **공항 코드·항공 태그·여정선·파란 프로스트 칩** 중 하나를 정보 요소로 둡니다. 흰색 카드는 약한 푸른색 그라데이션과 반투명 표면으로 ‘라이트 항공 라운지’의 깊이를 유지하고, 현재 여행은 심야 블루 오버레이, 여행 기록은 따뜻한 필름 톤으로 분리합니다. 화면 제목은 Manrope Bold로 명료하게, 목적지명과 여행기 제목은 DM Serif Display Italic으로 절제해 사용합니다.
 
+### UI System Refinement
+
+모든 주요 화면의 첫 정보 카드는 공항 코드·여정선·항공 태그·Frosted Fare Chip 중 두 가지 이상을 갖는 **세로형 여행 패스포트**가 됩니다. 또잇의 궤도 마크는 AI 초안·추천·저장·기록 상태에 반복적으로 사용하고, AI가 왜 제안했는지와 사용자가 무엇을 바꿀 수 있는지를 짧은 능동형 문구로 드러냅니다. 기능 제목·수치·CTA는 Manrope Bold로, 목적지와 여행 기록명은 DM Serif Display Italic으로 구분합니다.
+
 ## References
 
 [1] [토스 디자인 시스템(TDS)](https://developers-apps-in-toss.toss.im/design/components)

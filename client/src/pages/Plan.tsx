@@ -10,6 +10,8 @@ import { AppShell } from "@/components/AppShell";
 import { TripMap } from "@/components/TripMap";
 import { itinerary } from "@/const";
 
+const brandMark = "/manus-storage/doit-orbit-logo_a4c09b0a.png";
+
 export default function Plan() {
   const [activeDay, setActiveDay] = useState(1);
   const [saved, setSaved] = useState(false);
@@ -22,9 +24,10 @@ export default function Plan() {
       </div>
 
       <section className="plan-brief glass-panel">
-        <div className="brief-title"><span><Sparkles size={15} /> AI가 만든 초안</span><span className="plan-route-code">ICN → NRT</span><button onClick={() => toast("여행 조건을 수정할 수 있습니다.")}>조건 보기 <ChevronDown size={14} /></button></div>
+        <div className="brief-title"><span><img src={brandMark} alt="" /> <Sparkles size={15} /> 또잇 AI 초안</span><span className="plan-route-code">ICN → NRT</span><button onClick={() => toast("여행 조건을 수정할 수 있습니다.")}>조건 보기 <ChevronDown size={14} /></button></div>
         <p>맛집과 전시를 좋아하는 두 분을 위해, 오후 이동을 줄이고 저녁에 긴자를 넣었어요.</p>
         <div className="brief-chips"><span>12.11 — 12.15</span><span>2명</span><span><CircleDollarSign size={14} /> 중간 예산</span></div>
+        <button className="ai-reason-link" onClick={() => toast("도보 이동을 34분으로 맞추고, 긴자 저녁 예약 시간을 우선했어요.")}><Sparkles size={13} /> 이 동선으로 만든 이유</button>
       </section>
 
       <div className="day-tabs" role="tablist" aria-label="일차 선택">

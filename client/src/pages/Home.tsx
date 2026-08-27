@@ -10,6 +10,7 @@ import { flights, itinerary } from "@/const";
 
 const heroImage = "/manus-storage/doit-hero-tokyo-bluehour_97254225.jpg";
 const neighborhoodImage = "/manus-storage/doit-tokyo-neighborhood_9ea29236.jpg";
+const brandMark = "/manus-storage/doit-orbit-logo_a4c09b0a.png";
 
 export default function Home() {
   return (
@@ -19,7 +20,7 @@ export default function Home() {
         <div className="hero-shade" />
         <div className="horizon-halo" />
         <div className="hero-content">
-          <div className="hero-eyebrow"><span className="live-dot" /> AI가 제안한 여행</div>
+          <div className="hero-eyebrow"><img src={brandMark} alt="" /> <span className="live-dot" /> 또잇이 만든 여행 초안</div>
           <div>
             <p className="hero-destination"><em>Tokyo</em><span>ICN → NRT · 4박 5일</span></p>
             <h2>도쿄의 하루가,<br /><em>이동보다 기억으로</em><br />채워지도록 해요.</h2>
@@ -36,7 +37,7 @@ export default function Home() {
         <div className="section-heading">
           <div>
             <span className="section-kicker">진행 중인 여행</span>
-            <h2>도쿄, 4박 5일</h2>
+            <h2><em>Tokyo</em> · 4박 5일</h2>
           </div>
           <span className="quiet-count">72% 완성</span>
         </div>
