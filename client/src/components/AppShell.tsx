@@ -1,11 +1,9 @@
 /**
- * Design reminder — 또잇의 Toss-style adaptation: 밝은 중성 바탕과 명료한 정보 카드를 쓰되,
- * 또잇의 궤도 심볼과 여행 맥락을 유지하고 하단 내비게이션은 한 손 사용성을 우선한다.
+ * Design reminder — Light Aviation Lounge: 상단 헤더 없이 콘텐츠가 안전 영역부터 시작하며,
+ * 밝은 정보 카드와 여행 맥락을 유지하고 하단 내비게이션으로 전역 이동을 제공한다.
  */
 import { Link, useLocation } from "wouter";
 import { CalendarDays, Compass, Home, Plus, UserRound } from "lucide-react";
-
-const LOGO_URL = "/manus-storage/doit-orbit-logo_a4c09b0a.png";
 
 const navigation = [
   { href: "/", label: "홈", icon: Home },
@@ -27,17 +25,6 @@ export function AppShell({ eyebrow, title, children }: AppShellProps) {
   return (
     <div className="app-stage">
       <div className="app-frame">
-        <header className="app-header">
-          <Link href="/" className="brand-lockup" aria-label="또잇 홈으로 이동">
-            <img className="brand-mark" src={LOGO_URL} alt="또잇 궤도 심볼" />
-            <span className="brand-word">do it<span>.</span></span>
-          </Link>
-          <div className="header-status" aria-label="여행 플래너 서비스 상태">
-            <span className="status-pulse" />
-            <span>도쿄 여행</span>
-          </div>
-        </header>
-
         <main className="app-content">
           <div className="page-intro">
             <p>{eyebrow}</p>
