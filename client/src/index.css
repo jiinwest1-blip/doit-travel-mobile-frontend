@@ -20,6 +20,23 @@ button, a { -webkit-tap-highlight-color: transparent; }
 button { border: 0; cursor: pointer; }
 a { color: inherit; text-decoration: none; }
 
+/* Light Aviation Lounge scrollbar — 데스크톱에서만 절제된 이동 신호로 보이게 한다. */
+html {
+  scrollbar-width: thin;
+  scrollbar-color: #8cc8fb #edf3f8;
+}
+
+html::-webkit-scrollbar { width: 10px; }
+html::-webkit-scrollbar-track { background: #edf3f8; border-left: 1px solid rgba(49,130,246,.06); }
+html::-webkit-scrollbar-thumb { border: 3px solid #edf3f8; border-radius: 999px; background: linear-gradient(180deg, #b8e0ff, #5baff0); box-shadow: inset 0 0 0 1px rgba(255,255,255,.55); }
+html::-webkit-scrollbar-thumb:hover { background: linear-gradient(180deg, #8ed0ff, #3182f6); }
+html::-webkit-scrollbar-corner { background: #edf3f8; }
+
+@media (max-width: 759px) {
+  html { scrollbar-width: auto; }
+  html::-webkit-scrollbar { width: 0; height: 0; }
+}
+
 .app-stage { min-height: 100vh; background: radial-gradient(circle at 50% -10%, #e4f2ff 0, #f2f4f6 42rem); }
 .app-frame { position: relative; width: min(100%, 760px); min-height: 100vh; margin: 0 auto; overflow: hidden; background: linear-gradient(180deg, #f8fbff 0, #f2f4f6 38rem); }
 .app-header { display: flex; align-items: center; justify-content: space-between; padding: calc(17px + env(safe-area-inset-top)) 20px 10px; background: #fff; }
