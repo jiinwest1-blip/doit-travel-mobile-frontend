@@ -1,6 +1,6 @@
 /**
- * Design reminder — 또잇의 Toss-style adaptation: 밝은 중성 바탕과 명료한 정보 카드를 쓰되,
- * 또잇의 궤도 심볼과 여행 맥락을 유지하고 하단 내비게이션은 한 손 사용성을 우선한다.
+ * Design reminder — Light Aviation Lounge: 밝은 중성 바탕과 명료한 정보 카드를 쓰되,
+ * 또잇의 궤도 심볼과 여행 맥락을 유지하고 화면별 인트로는 필요한 경우에만 노출한다.
  */
 import { Link, useLocation } from "wouter";
 import { CalendarDays, Compass, Home, Plus, UserRound } from "lucide-react";
@@ -16,7 +16,7 @@ const navigation = [
 ];
 
 type AppShellProps = {
-  eyebrow: string;
+  eyebrow?: string;
   title?: string;
   children: React.ReactNode;
 };
@@ -39,10 +39,12 @@ export function AppShell({ eyebrow, title, children }: AppShellProps) {
         </header>
 
         <main className="app-content">
-          <div className="page-intro">
-            <p>{eyebrow}</p>
-            {title ? <h1>{title}</h1> : null}
-          </div>
+          {eyebrow || title ? (
+            <div className="page-intro">
+              {eyebrow ? <p>{eyebrow}</p> : null}
+              {title ? <h1>{title}</h1> : null}
+            </div>
+          ) : null}
           {children}
         </main>
 
