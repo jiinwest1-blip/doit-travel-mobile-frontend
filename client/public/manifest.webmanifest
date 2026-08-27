@@ -1,0 +1,17 @@
+{
+  "name": "Do it — AI Travel Planner",
+  "short_name": "또잇",
+  "description": "AI가 만드는 나만의 여행 동선, 또잇",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0B1220",
+  "theme_color": "#0B1220",
+  "icons": [
+    {
+      "src": "/manus-storage/doit-orbit-logo_a4c09b0a.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
