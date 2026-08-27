@@ -32,7 +32,7 @@ const interests = [
   { id: "walk", label: "동네 산책", icon: Footprints },
 ];
 
-const brandMark = "/manus-storage/doit-logo-glass-tile_dbe80741.png";
+const brandMark = "/manus-storage/doit-orbit-logo_a4c09b0a.png";
 
 export default function Create() {
   const [mode, setMode] = useState<CreationMode>("form");

@@ -1,12 +1,10 @@
 /**
  * Design reminder — Light Aviation Lounge: 상단 헤더 없이 콘텐츠가 안전 영역부터 시작하며,
- * 기획서의 유광 DO 타일 마크와 블루·라일락 글래스 표면을 전역 이동과 여행 흐름에 사용한다.
+ * 앱 프레임 위의 얇은 오버레이 스크롤 인디케이터와 부유형 계획 액션으로 폭 손실 없이 여행 흐름을 보여 준다.
  */
 import { Link, useLocation } from "wouter";
 import { CalendarDays, Compass, Home, Sparkles, UserRound } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
-
-const brandTile = "/manus-storage/doit-logo-glass-tile_dbe80741.png";
 
 const navigation = [
   { href: "/", label: "홈", icon: Home },
@@ -92,11 +90,7 @@ export function AppShell({ eyebrow, title, children }: AppShellProps) {
                 className={`dock-item ${active ? "is-active" : ""} ${item.primary ? "is-primary" : ""}`}
                 aria-current={active ? "page" : undefined}
               >
-                {item.primary ? (
-                  <span className="dock-logo"><img src={brandTile} alt="" /></span>
-                ) : (
-                  <span className="dock-icon"><Icon size={19} strokeWidth={1.9} /></span>
-                )}
+                <span className="dock-icon"><Icon size={item.primary ? 22 : 19} strokeWidth={item.primary ? 2.4 : 1.9} /></span>
                 <span>{item.label}</span>
               </Link>
             );

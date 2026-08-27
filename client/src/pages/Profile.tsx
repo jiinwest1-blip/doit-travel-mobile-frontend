@@ -6,7 +6,7 @@ import { ChevronRight, CircleDollarSign, Heart, MapPin, Plane, SlidersHorizontal
 import { toast } from "sonner";
 import { AppShell } from "@/components/AppShell";
 
-const brandMark = "/manus-storage/doit-logo-glass-tile_dbe80741.png";
+const brandMark = "/manus-storage/doit-orbit-logo_a4c09b0a.png";
 
 export default function Profile() {
   return (
